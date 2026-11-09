@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Logging in…</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #10164f; color: #eef0ff; font: 700 18px system-ui, sans-serif; }
+  a { color: #ffb3e6; }
+</style>
+</head>
+<body>
+<p id="msg">❄ Logging you in to Fuyune…</p>
+<script>
+  // Google can only send people back to an https page, so it sends them here.
+  // This page passes the login on to the Fuyune control panel. It only goes to this one address.
+  var PANEL = 'http://78.154.103.36:13635/callback/google';
+  var q = location.search;
+  if (/[?&](code|error)=/.test(q)) location.replace(PANEL + q);
+  else document.getElementById('msg').innerHTML = 'Nothing to do here. <a href="http://78.154.103.36:13635/login">Go to the login page</a>';
+</script>
+</body>
+</html>
