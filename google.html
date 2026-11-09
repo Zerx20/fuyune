@@ -16,10 +16,10 @@
 <script>
   // Google can only send people back to an https page, so it sends them here.
   // This page passes the login on to the Fuyune control panel. It only goes to this one address.
-  var PANEL = 'http://78.154.103.36:13635/callback/google';
+  var PANEL = 'https://fuyune-bot.duckdns.org:13635/callback/google';
   var q = location.search;
   if (/[?&](code|error)=/.test(q)) location.replace(PANEL + q);
-  else document.getElementById('msg').innerHTML = 'Nothing to do here. <a href="http://78.154.103.36:13635/login">Go to the login page</a>';
+  else document.getElementById('msg').innerHTML = 'Nothing to do here. <a href="https://fuyune-bot.duckdns.org:13635/login">Go to the login page</a>';
 </script>
 </body>
 </html>
